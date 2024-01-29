@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  padding: 22px 240px;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+
+  .button {
+    color: #344051;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    flex: 1 0 0;
+    .logo {
+      font-size: 40px;
+      color: #344051;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  }
+}
