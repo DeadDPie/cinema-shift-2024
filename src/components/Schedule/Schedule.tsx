@@ -6,6 +6,7 @@ import { CinemaHall } from "../CinemaHall/CinemaHall";
 import { useSchedule } from "../../hooks/useSchedule";
 import { Hall } from "../../types/types";
 import { ModalDetailsPayment } from "../ModalDetailsPayment/ModalDetailsPayment";
+import { UserPaymentForm } from "../UserPaymentForm/UserPaymentForm";
 
 interface ScheduleProps {
   name: string;
@@ -29,7 +30,7 @@ export const Schedule: FC<ScheduleProps> = ({ name, movieId }) => {
   return (
     <>
       <ModalDetailsPayment visible={modal} setVisisble={setModal}>
-        here will be form
+        <UserPaymentForm />
       </ModalDetailsPayment>
       {schedules && <Sessions schedules={schedules} setHall={setHall} />}
 
