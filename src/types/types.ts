@@ -30,7 +30,36 @@ export interface Film {
   img: string;
 }
 
-export interface FilmResponse {
+export interface FilmsResponse {
   success: boolean;
   films: Film[];
+}
+export interface FilmInfoResponse {
+  success: boolean;
+  film: Film;
+}
+
+export interface Schedule {
+  date: string;
+  seances: Seance[];
+}
+
+export interface Seance {
+  time: string;
+  hall: Hall;
+  payedTickets: Ticket[];
+}
+
+export interface Hall {
+  name: string;
+  places: Place[][];
+}
+
+export interface Place {
+  price: number;
+  type: string;
+}
+
+interface Ticket {
+  // Define the properties of a ticket here
 }
