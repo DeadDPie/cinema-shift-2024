@@ -1,8 +1,20 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import cl from "./CinemaHall.module.scss";
+import { useDispatch } from "react-redux";
+
+import {
+  choseFilm,
+  chosePlaces,
+  setFilmId,
+  setSuccessful,
+} from "../../store/paymentDetails/paymentDetails.slice.ts";
 import { Hall, Place } from "../../types/types";
 
+import cl from "./CinemaHall.module.scss";
+
+interface IPlace {
+  row: string;
+  placeNumber: string;
+}
 interface CinemaHallProps {
   name: string;
   cinema: Hall;
@@ -22,11 +34,22 @@ export const CinemaHall: React.FC<CinemaHallProps> = ({
   movieId,
   callbackModal,
 }) => {
+  const dispatch = useDispatch();
+
   const [place, setPlace] = useState<SelectedPlace>({
     row: 0,
     placeNumber: 0,
     price: 0,
   });
+
+  const buy = (name: string, place: SelectedPlace) => {
+    dispatch(choseFilm(name));
+    dispatch(chosePlaces(place));
+    dispatch(setFilmId(movieId));
+    dispatch(setSuccessful(false));
+
+    callbackModal(true);
+  };
 
   return (
     <div>
@@ -75,7 +98,7 @@ export const CinemaHall: React.FC<CinemaHallProps> = ({
             <p>Full price</p>
             <p>{place.price}</p>
           </div>
-          <button className={cl.btn} onClick={() => callbackModal(true)}>
+          <button className={cl.btn} onClick={() => buy(name, place)}>
             Buy <i className="bx bx-credit-card-front"></i>
           </button>
         </div>

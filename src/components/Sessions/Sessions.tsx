@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  choseTime,
+  choseDate,
+} from "../../store/paymentDetails/paymentDetails.slice.ts";
 
 import { Schedule, Seance } from "../../types/types";
 
@@ -10,7 +15,20 @@ interface SessionsProps {
 }
 
 export const Sessions: React.FC<SessionsProps> = ({ schedules, setHall }) => {
+  const dispatch = useDispatch();
+
   const [seancesDate, setSeancesDate] = useState<Seance[]>();
+
+  const buy = (seance: Seance) => {
+    setHall(seance.hall);
+    dispatch(choseTime(seance.time));
+    console.log(seance.time);
+  };
+  const choseDateToBuy = (schedule: Schedule) => {
+    setSeancesDate(schedule.seances);
+    dispatch(choseDate(schedule.date));
+    console.log(schedule.date);
+  };
 
   return (
     <div className={cl.schedule}>
@@ -22,7 +40,7 @@ export const Sessions: React.FC<SessionsProps> = ({ schedules, setHall }) => {
                 seancesDate === schedule.seances ? cl.clicked : ""
               }`}
               key={index}
-              onClick={() => setSeancesDate(schedule.seances)}
+              onClick={() => choseDateToBuy(schedule)}
             >
               {schedule.date}
             </button>
@@ -39,7 +57,7 @@ export const Sessions: React.FC<SessionsProps> = ({ schedules, setHall }) => {
                 seance.hall.name === "Blue" && cl.blueHall
               }`}
               key={index}
-              onClick={() => setHall(seance.hall)}
+              onClick={() => buy(seance)}
             >
               {seance.time}
             </button>

@@ -61,5 +61,16 @@ export interface Place {
 }
 
 interface Ticket {
-  // Define the properties of a ticket here
+  // back is empty
+}
+export interface IUser {
+  firstname: string;
+  lastname: string;
+  middlename: string;
+  phone: string;
+}
+export interface IdebitCard {
+  pan: string;
+  expireDate: string;
+  cvv: string;
 }

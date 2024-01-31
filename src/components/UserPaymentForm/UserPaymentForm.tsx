@@ -4,6 +4,9 @@ import { z } from "zod";
 
 import cl from "./UserPaymentForm.module.scss";
 
+//не понимаю как сделать обработку условия
+/*Ivanov Иван Ivanovich
+Значения заданы с использованием разных алфавитов*/
 const nameSchema = z
   .string()
   .min(1, "Минимальная длина - 1 символ")
