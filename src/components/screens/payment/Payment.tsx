@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
-import { usePayment } from "../../hooks/usePayment";
-import { RootState } from "../../store/store";
-import { IUser, IdebitCard } from "../../types/types";
+import { usePayment } from "../../../hooks/usePayment";
+import { RootState } from "../../../store/store";
+import { IUser, IdebitCard } from "../../../types/types";
 import cl from "./Payment.module.scss";
 
 export const Payment: React.FC = () => {
@@ -19,16 +19,16 @@ export const Payment: React.FC = () => {
     cvv: "",
   });
 
-  const movieId = useSelector((state: RootState) => state.payment.filmId);
-  const date = useSelector((state: RootState) => state.payment.date);
-  const time = useSelector((state: RootState) => state.payment.time);
-  const places = useSelector((state: RootState) => state.payment.places);
-  console.log(movieId);
+  const { filmId, date, time, places } = useSelector(
+    (state: RootState) => state.payment
+  );
+
+  console.log(filmId);
   console.log(date);
   console.log(places);
   console.log(debitCard);
 
-  const buyTicket = usePayment(movieId, user, debitCard, date, time, places);
+  const buyTicket = usePayment(filmId, user, debitCard, date, time, places);
 
   return (
     <div className={cl.payment}>

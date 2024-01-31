@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { Afisha } from "./components/screens/afisha/Afisha";
-import { FilmPage } from "./components/screens/afisha/filmpage/FilmPage";
-import { Payment } from "./components/payment/Payment";
+import { FilmPage } from "./components/screens/filmpage/FilmPage";
+import { Payment } from "./components/screens/payment/Payment";
 
 export const Router: React.FC = () => {
   return (

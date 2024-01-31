@@ -2,7 +2,10 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { setSuccessful } from "../store/paymentDetails/paymentDetails.slice.ts";
+import {
+  setSuccessful,
+  setOrderNumber,
+} from "../store/paymentDetails/paymentDetails.slice.ts";
 import { IUser, IdebitCard } from "../types/types.ts";
 
 interface IPlaces {
@@ -54,9 +57,11 @@ export const usePayment = (
     try {
       const response = await axios.request(options);
       console.log(response.data);
+      console.log(response.data.order.orderNumber);
 
       response.data.success &&
         dispatch(setSuccessful(true)) &&
+        dispatch(setOrderNumber(response.data.order.orderNumber)) &&
         navigate(`/film/${movieId}`);
     } catch (error) {
       console.error(error);

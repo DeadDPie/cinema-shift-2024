@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface PaymentState {
+  orderNumber: number;
   filmId: string;
   film: string;
   date: string;
@@ -14,6 +15,7 @@ export interface PaymentState {
 }
 
 const initialState: PaymentState = {
+  orderNumber: 0,
   filmId: "",
   film: "",
   date: "",
@@ -29,6 +31,9 @@ const paymentSlice = createSlice({
   reducers: {
     setSuccessful: (state, action: PayloadAction<boolean>) => {
       state.isSuccessful = action.payload;
+    },
+    setOrderNumber: (state, action: PayloadAction<number>) => {
+      state.orderNumber = action.payload;
     },
     setFilmId: (state, action: PayloadAction<string>) => {
       state.filmId = action.payload;
@@ -56,6 +61,7 @@ const paymentSlice = createSlice({
 });
 
 export const {
+  setOrderNumber,
   choseFilm,
   choseDate,
   choseTime,
