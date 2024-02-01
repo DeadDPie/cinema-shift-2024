@@ -1,11 +1,11 @@
 import cl from "./FilmInfo.module.scss";
 import { Film } from "../../types/types";
 
-interface Props {
+interface FilmInfoProps {
   film: Film;
 }
 
-export const FilmInfo: React.FC<Props> = ({ film }) => {
+export const FilmInfo: React.FC<FilmInfoProps> = ({ film }) => {
   return (
     <>
       <div className={cl.info}>

@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {
-  choseTime,
-  choseDate,
-} from "../../store/paymentDetails/paymentDetails.slice.ts";
+import { choseTime, choseDate } from "@paymentDetails/paymentDetails.slice";
 
 import { Schedule, Seance } from "../../types/types";
 

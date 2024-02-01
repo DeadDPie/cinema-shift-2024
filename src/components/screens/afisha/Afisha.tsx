@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { Header } from "../../Header/Header";
+import { Header } from "@header/Header";
 import { CardsList } from "../../CardsList/CardList";
 
 import cl from "./Afisha.module.scss";

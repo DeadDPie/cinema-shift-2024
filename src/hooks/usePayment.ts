@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import {
   setSuccessful,
   setOrderNumber,
-} from "../store/paymentDetails/paymentDetails.slice.ts";
+} from "@paymentDetails/paymentDetails.slice";
 import { IUser, IdebitCard } from "../types/types.ts";
 
 interface IPlaces {

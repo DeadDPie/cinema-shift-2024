@@ -6,7 +6,7 @@ import {
   chosePlaces,
   setFilmId,
   setSuccessful,
-} from "../../store/paymentDetails/paymentDetails.slice.ts";
+} from "@paymentDetails/paymentDetails.slice";
 import { Hall, Place } from "../../types/types";
 
 import cl from "./CinemaHall.module.scss";

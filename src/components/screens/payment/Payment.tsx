@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
-import { usePayment } from "../../../hooks/usePayment";
-import { RootState } from "../../../store/store";
+import { usePayment } from "@hooks/usePayment";
+import { RootState } from "@store/store";
 import { IUser, IdebitCard } from "../../../types/types";
 import cl from "./Payment.module.scss";
 

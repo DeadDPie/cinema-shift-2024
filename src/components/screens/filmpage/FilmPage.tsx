@@ -2,13 +2,13 @@ import React, { useState, FC } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { RootState } from "../../../store/store";
-import { useMovie } from "../../../hooks/useMovie";
-import { Header } from "../../Header/Header";
+import { RootState } from "@store/store";
+import { useMovie } from "@hooks/useMovie";
+import { Header } from "@header/Header";
 import { FilmInfo } from "../../FilmInfo/FilmInfo";
 import { Schedule } from "../../Schedule/Schedule";
 import { ModalDetailsPayment } from "../../ModalDetailsPayment/ModalDetailsPayment";
-import { setSuccessful } from "./../../../store/paymentDetails/paymentDetails.slice.ts";
+import { setSuccessful } from "@paymentDetails/paymentDetails.slice";
 import { SuccessfullyPaid } from "../../SuccessfullyPaid/SuccessfullyPaid.tsx";
 
 import cl from "./FilmPage.module.scss";

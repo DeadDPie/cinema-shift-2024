@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { Sessions } from "../Sessions/Sessions";
 import { CinemaHall } from "../CinemaHall/CinemaHall";
-import { useSchedule } from "../../hooks/useSchedule";
+import { useSchedule } from "@hooks/useSchedule.ts";
 import { Hall } from "../../types/types";
 import { ModalDetailsPayment } from "../ModalDetailsPayment/ModalDetailsPayment";
 import { UserPaymentForm } from "../UserPaymentForm/UserPaymentForm";

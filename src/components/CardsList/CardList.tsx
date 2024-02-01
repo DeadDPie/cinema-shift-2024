@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { useAllMovies } from "../../hooks/useAllMovies";
+import { useAllMovies } from "@hooks/useAllMovies.ts";
 import { Card } from "../Card/Card";
 
 import cl from "./CardsList.module.scss";
