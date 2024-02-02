@@ -1,26 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { z } from "zod";
 
+import { validationSchema } from "../../constants/constants";
 import cl from "./UserPaymentForm.module.scss";
-
-//не понимаю как сделать обработку условия
-/*Ivanov Иван Ivanovich
-Значения заданы с использованием разных алфавитов*/
-const nameSchema = z
-  .string()
-  .min(1, "Минимальная длина - 1 символ")
-  .max(60, "Максимальная длина - 60 символов")
-  .regex(/^(?!.*--)[\p{L}\s-]+$/u, "Недопустимые символы");
-const phoneSchema = z
-  .string()
-  .regex(/^[0-9]{10,12}$/, "Неправильный формат телефона");
-
-const validationSchema = z.object({
-  firstname: nameSchema,
-  lastname: nameSchema,
-  phone: phoneSchema,
-});
 
 interface User {
   firstname: string;
@@ -29,7 +11,7 @@ interface User {
   phone: string;
 }
 
-export const UserPaymentForm: React.FC = () => {
+export const UserPaymentForm = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState<User>({
@@ -42,16 +24,16 @@ export const UserPaymentForm: React.FC = () => {
   //правильно ли вообще таким обраазом типизировать ошибки?
   const [errors, setErrors] = useState<any | unknown>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
     setUser((prevUser) => ({
       ...prevUser,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     try {
       validationSchema.parse(user);

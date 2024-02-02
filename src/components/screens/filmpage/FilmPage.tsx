@@ -1,4 +1,4 @@
-import React, { useState, FC } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -13,13 +13,14 @@ import { SuccessfullyPaid } from "../../SuccessfullyPaid/SuccessfullyPaid.tsx";
 
 import cl from "./FilmPage.module.scss";
 
-export const FilmPage: FC = () => {
+export const FilmPage = () => {
+  const { filmId } = useParams();
+
   const dispatch = useDispatch();
   const isSuccessful = useSelector(
     (state: RootState) => state.payment.isSuccessful
   );
 
-  const { filmId } = useParams();
   const movie = useMovie(filmId);
   const [successfullyPaid, setsuccessfullyPaid] = useState(false);
 

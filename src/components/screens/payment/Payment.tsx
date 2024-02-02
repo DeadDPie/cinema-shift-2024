@@ -7,7 +7,7 @@ import { RootState } from "@store/store";
 import { IUser, IdebitCard } from "../../../types/types";
 import cl from "./Payment.module.scss";
 
-export const Payment: React.FC = () => {
+export const Payment = () => {
   const location = useLocation();
   const user: IUser = (location.state as any).user; //Можно ли так делать "location.state as any", как будет правильно?
 
@@ -43,8 +43,8 @@ export const Payment: React.FC = () => {
               value={debitCard.pan || ""}
               minLength={8}
               maxLength={9}
-              onChange={(e) =>
-                setDebitCard({ ...debitCard, pan: e.target.value })
+              onChange={(event) =>
+                setDebitCard({ ...debitCard, pan: event.target.value })
               }
             />
           </div>
@@ -55,8 +55,8 @@ export const Payment: React.FC = () => {
                 type="text"
                 placeholder="00/00"
                 value={debitCard.expireDate || ""}
-                onChange={(e) =>
-                  setDebitCard({ ...debitCard, expireDate: e.target.value })
+                onChange={(event) =>
+                  setDebitCard({ ...debitCard, expireDate: event.target.value })
                 }
               />
             </div>
@@ -68,8 +68,8 @@ export const Payment: React.FC = () => {
                 minLength={3}
                 maxLength={4}
                 value={debitCard.cvv || ""}
-                onChange={(e) =>
-                  setDebitCard({ ...debitCard, cvv: e.target.value })
+                onChange={(event) =>
+                  setDebitCard({ ...debitCard, cvv: event.target.value })
                 }
               />
             </div>

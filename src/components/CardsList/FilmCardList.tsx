@@ -1,11 +1,9 @@
-import React, { FC } from "react";
-
 import { useAllMovies } from "@hooks/useAllMovies.ts";
-import { Card } from "../Card/Card";
+import { Card } from "../Card/FilmCard";
 
 import cl from "./CardsList.module.scss";
 
-export const CardsList: FC = () => {
+export const CardsList = () => {
   const movies = useAllMovies();
 
   return (

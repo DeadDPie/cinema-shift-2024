@@ -1,9 +1,8 @@
-import React, { FC } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@store/store";
 import cl from "./SuccessfullyPaid.module.scss";
 
-export const SuccessfullyPaid: FC = () => {
+export const SuccessfullyPaid = () => {
   const { orderNumber, film, date, time, places } = useSelector(
     (state: RootState) => state.payment
   );

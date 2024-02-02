@@ -11,15 +11,16 @@ export const ModalDetailsPayment: FC<ModalDetailsPaymentProps> = ({
   children,
   visible,
   setVisisble,
-}) => {
-  return (
+}) => (
+  <div
+    className={`${cl.Modal} ${visible && cl.active}`}
+    onClick={() => setVisisble(false)}
+  >
     <div
-      className={`${cl.Modal} ${visible && cl.active}`}
-      onClick={() => setVisisble(false)}
+      className={cl.ModalContent}
+      onClick={(event) => event.stopPropagation()}
     >
-      <div className={cl.ModalContent} onClick={(e) => e.stopPropagation()}>
-        {children}
-      </div>
+      {children}
     </div>
-  );
-};
+  </div>
+);
