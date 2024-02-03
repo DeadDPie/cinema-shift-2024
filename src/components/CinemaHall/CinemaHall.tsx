@@ -11,10 +11,6 @@ import { Hall, Place } from "../../types/types";
 
 import cl from "./CinemaHall.module.scss";
 
-interface IPlace {
-  row: string;
-  placeNumber: string;
-}
 interface CinemaHallProps {
   name: string;
   cinema: Hall;

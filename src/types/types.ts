@@ -60,10 +60,7 @@ export interface Place {
   type: string;
 }
 
-interface Ticket {
-  // back is empty
-}
-export interface IUser {
+export interface User {
   firstname: string;
   lastname: string;
   middlename: string;
@@ -73,4 +70,46 @@ export interface IdebitCard {
   pan: string;
   expireDate: string;
   cvv: string;
+}
+
+export interface Ticket {
+  acknowledged: boolean;
+  deletedCount?: number;
+  filmId?: string;
+  row: number;
+  column: number;
+  seance: {
+    date: string;
+    time: string;
+  };
+  phone: string;
+  _id: string;
+  created: string;
+  updated: string;
+}
+
+export interface Order {
+  _id: string;
+  tickets: {
+    seance: { date: string; time: string };
+    filmId: number;
+    row: number;
+    column: number;
+  }[];
+  status: string;
+  orderNumber: string;
+  /*
+  _id: string;
+  orderNumber: number;
+  tickets: Ticket[];
+  phone: string;
+  status: string;
+  created: string;
+  updated: string;*/
+}
+
+export interface OrderResponse {
+  success: true;
+  reason: string;
+  orders: Order[];
 }

@@ -6,20 +6,20 @@ import {
   setSuccessful,
   setOrderNumber,
 } from "@paymentDetails/paymentDetails.slice";
-import { IUser, IdebitCard } from "../types/types.ts";
+import { User, IdebitCard } from "../types/types.ts";
 
-interface IPlaces {
+interface Places {
   row: number;
   seat: number;
 }
 
 export const usePayment = (
   movieId: string,
-  user: IUser,
+  user: User,
   debitCard: IdebitCard,
   date: string,
   time: string,
-  places: IPlaces
+  places: Places
 ) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();

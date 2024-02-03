@@ -11,6 +11,17 @@ interface FilmCardProps {
 
 export const Card: FC<FilmCardProps> = ({ film }) => {
   const navigate = useNavigate();
+
+  const stars = [...Array(5)].map((_, index) => (
+    <i
+      key={index}
+      className={`bx ${
+        index < parseInt(film.userRatings.kinopoisk) / 2
+          ? "bxs-star"
+          : "bx-star"
+      }`}
+    ></i>
+  ));
   return (
     <div className={cl.item}>
       <img
@@ -24,13 +35,7 @@ export const Card: FC<FilmCardProps> = ({ film }) => {
       </div>
       <p className={cl.h1}>{film.name}</p>
       <p className={cl.h2}>{film.originalName}</p>
-      <div>
-        <i className="bx bxs-star"></i>
-        <i className="bx bxs-star"></i>
-        <i className="bx bxs-star"></i>
-        <i className="bx bxs-star"></i>
-        <i className="bx bxs-star"></i>
-      </div>
+      <div>{stars}</div>
 
       <p className={cl.rating}>Kinopoisk - {film.userRatings.kinopoisk}</p>
       <button type="submit" onClick={() => navigate(`/film/${film.id}`)}>

@@ -4,12 +4,12 @@ import { useLocation } from "react-router-dom";
 
 import { usePayment } from "@hooks/usePayment";
 import { RootState } from "@store/store";
-import { IUser, IdebitCard } from "../../../types/types";
+import { User, IdebitCard } from "../../../types/types";
 import cl from "./Payment.module.scss";
 
 export const Payment = () => {
   const location = useLocation();
-  const user: IUser = (location.state as any).user; //Можно ли так делать "location.state as any", как будет правильно?
+  const user: User = (location.state as any).user; //Можно ли так делать "location.state as any", как будет правильно?
 
   console.log(user);
 

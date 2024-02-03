@@ -3,7 +3,9 @@ import axios from "axios";
 
 import { FilmInfoResponse, Film } from "../types/types";
 
-export const useMovie = (filmId: string | undefined): Film | undefined => {
+export const useMovie = (
+  filmId: string | undefined | number
+): Film | undefined => {
   const [movie, setMovie] = useState<Film | undefined>();
 
   useEffect(() => {
