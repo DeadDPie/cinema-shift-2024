@@ -13,7 +13,8 @@ body {
   margin: auto;
   gap: 40px;
   h1 {
-    color: var(--darkgrey, #252525);
+    margin-top: 40px;
+    color: #252525;
     text-align: center;
     font-family: Roboto;
     font-size: 36px;
@@ -29,14 +30,14 @@ body {
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    color: #704e4e;
+    color: #5a535c;
     font-family: Roboto;
     font-size: 20px;
 
     font-weight: 500;
   }
   input {
-    color: var(--darkgrey, #252525);
+    color: #252525;
     font-family: Roboto;
     font-size: 20px;
 
@@ -44,8 +45,8 @@ body {
     height: 48px;
     flex-shrink: 0;
     border-radius: 10px;
-    border: 1px solid var(--lightgrey, #949494);
-    background: var(--white, #fff);
+    border: 1px solid #949494;
+    background: #fff;
     padding: 8px;
     margin-bottom: 5px;
   }
@@ -53,7 +54,7 @@ body {
 .btn {
   border: 2px;
   color: white;
-  color: var(--white, #fff);
+  color: #fff;
   text-align: center;
   font-family: Roboto;
   font-size: 18px;
@@ -64,7 +65,7 @@ body {
   height: 40px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: var(--lightred, #f55a5a);
+  background: #9534d2;
   cursor: pointer;
 }
 .codeBtn {
@@ -74,8 +75,8 @@ body {
   height: 40px;
   flex-shrink: 0;
   border-radius: 8px;
-  border: 1px solid var(--grey, #585858);
-  color: var(--grey, #585858);
+  border: 1px solid #585858;
+  color: #585858;
   text-align: center;
   font-family: Roboto;
   font-size: 18px;

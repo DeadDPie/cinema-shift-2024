@@ -1,8 +1,13 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@store/store";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+
 import cl from "./SuccessfullyPaid.module.scss";
 
 export const SuccessfullyPaid = () => {
+  const navigate = useNavigate();
+  const token = Cookies.get("userToken");
   const { orderNumber, film, date, time, places } = useSelector(
     (state: RootState) => state.payment
   );
@@ -29,7 +34,12 @@ export const SuccessfullyPaid = () => {
       </div>
       <div className={cl.additionalInfo}>
         Вся информация была продублирована в SMS
-        <button className={cl.button}>Перейти в личный кабинет</button>
+        <button
+          className={cl.button}
+          onClick={() => navigate("/account", { state: { token: token } })}
+        >
+          Перейти в личный кабинет
+        </button>
       </div>
     </div>
   );

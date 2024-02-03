@@ -53,12 +53,12 @@ export const Ticket: React.FC<TicketProps> = ({ token, ticket }) => {
           <div className={cl.status}>{ticket.status}</div>
           <p className={cl.code}>ticket code {ticket.orderNumber}</p>
         </div>
+        {ticket.status !== "CANCELED" && (
+          <button onClick={useCanceledTickets} className={cl.button}>
+            Cancel
+          </button>
+        )}
       </div>
-      {ticket.status !== "CANCELED" && (
-        <button onClick={useCanceledTickets} className={cl.button}>
-          Cancel
-        </button>
-      )}
     </div>
   );
 };

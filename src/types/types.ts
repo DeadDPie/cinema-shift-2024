@@ -63,7 +63,7 @@ export interface Place {
 export interface User {
   firstname: string;
   lastname: string;
-  middlename: string;
+  middlename?: string;
   phone: string;
 }
 export interface IdebitCard {

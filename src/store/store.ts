@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import paymentReducer from "./paymentDetails/paymentDetails.slice.ts";
+import UserReducer from "./user/user.slice";
 
 export const store = configureStore({
-  reducer: { payment: paymentReducer },
+  reducer: { payment: paymentReducer, user: UserReducer },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
