@@ -1,30 +1,25 @@
 # React + TypeScript + Vite
+- redux toolkit
+- axios
+- zod
+- Препроцессор SASS
+- cookie
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/1d20d27e-eacd-47de-839a-389db4768e2e)
+ ![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/ba14a15e-8b2a-49e6-b91a-4e6c32885387)
+![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/47ea0c6a-3caf-4e12-bdaf-260376d4e450)
+ ![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/c36a8131-32a0-4aec-ab30-dfcdce5d2d2a)
+ ![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/e4e606f9-e412-4d21-9d7e-feeef8afeaad)
 
-Currently, two official plugins are available:
+ ![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/13f46acb-7bf8-4e3d-8b19-faf41ba434f6)
+ ![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/d1567f1f-aba0-4f83-bbbb-1ca513bc0b51)
+ ![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/8bda0623-c2cd-4c32-854b-e6dcc9778386)
+ ![image](https://github.com/DeadDPie/cinema-shift-2024/assets/114298893/52f51ba9-1964-4f7a-bd1b-c8f955fa8e59)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+- 
