@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { choseTime, choseDate } from "@paymentDetails/paymentDetails.slice";
+import clsx from "clsx";
 
-import { Schedule, Seance } from "../../types/types";
+import { Schedule, Seance, Hall } from "../../types/types";
 
 import cl from "./Sessions.module.scss";
 
 interface SessionsProps {
   schedules: Schedule[];
-  setHall: (hall: any) => void;
+  setHall: (hall: Hall) => void;
 }
 
 export const Sessions: React.FC<SessionsProps> = ({ schedules, setHall }) => {
@@ -33,9 +34,9 @@ export const Sessions: React.FC<SessionsProps> = ({ schedules, setHall }) => {
         {schedules &&
           schedules.map((schedule, index) => (
             <button
-              className={`${cl.btn} ${
-                seancesDate === schedule.seances ? cl.clicked : ""
-              }`}
+              className={clsx(cl.btn, {
+                [cl.clicked]: seancesDate === schedule.seances,
+              })}
               key={index}
               onClick={() => choseDateToBuy(schedule)}
             >
@@ -48,11 +49,11 @@ export const Sessions: React.FC<SessionsProps> = ({ schedules, setHall }) => {
         {seancesDate &&
           seancesDate.map((seance: Seance, index: number) => (
             <button
-              className={`${cl.time} ${
-                seance.hall.name === "Red" && cl.redHall
-              } ${seance.hall.name === "Green" && cl.greenHall} ${
-                seance.hall.name === "Blue" && cl.blueHall
-              }`}
+              className={clsx(cl.time, {
+                [cl.redHall]: seance.hall.name === "Red",
+                [cl.greenHall]: seance.hall.name === "Green",
+                [cl.blueHall]: seance.hall.name === "Blue",
+              })}
               key={index}
               onClick={() => buy(seance)}
             >

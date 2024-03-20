@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import clsx from "clsx";
+
 import cl from "./ModalDetailsPayment.module.scss";
 
 interface ModalDetailsPaymentProps {
@@ -13,7 +15,9 @@ export const ModalDetailsPayment: FC<ModalDetailsPaymentProps> = ({
   setVisisble,
 }) => (
   <div
-    className={`${cl.Modal} ${visible && cl.active}`}
+    className={clsx(cl.Modal, {
+      [cl.active]: visible,
+    })}
     onClick={() => setVisisble(false)}
   >
     <div

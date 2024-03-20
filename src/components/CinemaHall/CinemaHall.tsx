@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import clsx from "clsx";
 
 import { RootState } from "@store/store";
 import {
@@ -94,14 +95,14 @@ export const CinemaHall: React.FC<CinemaHallProps> = ({
                       });
                       buyWithAuth();
                     }}
-                    className={`${cl.place} ${
-                      Place.type === "ECONOM" ? cl.econom : cl.comfort
-                    } ${Place.price == 0 ? cl.blocked : ""} ${
-                      place.placeNumber === indexPlace + 1 &&
-                      place.row === indexRow + 1
-                        ? cl.clicked
-                        : ""
-                    } `}
+                    className={clsx(cl.place, {
+                      [cl.econom]: Place.type === "ECONOM",
+                      [cl.comfort]: Place.type === "COMFORT",
+                      [cl.blocked]: Place.price === 0,
+                      [cl.clicked]:
+                        place.placeNumber === indexPlace + 1 &&
+                        place.row === indexRow + 1,
+                    })}
                   ></button>
                 ))}
               </div>

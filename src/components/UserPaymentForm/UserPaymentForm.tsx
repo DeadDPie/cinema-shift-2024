@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { validationSchema } from "../../constants/constants";
 import cl from "./UserPaymentForm.module.scss";
+import { ZodError } from "zod";
 
 interface User {
   firstname: string;
@@ -22,7 +23,7 @@ export const UserPaymentForm = () => {
   });
 
   //правильно ли вообще таким обраазом типизировать ошибки?
-  const [errors, setErrors] = useState<any | unknown>({});
+  const [errors, setErrors] = useState<ZodError | unknown>({});
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -39,8 +40,11 @@ export const UserPaymentForm = () => {
       validationSchema.parse(user);
       console.log("Данные прошли валидацию");
       navigate("/payment", { state: { user: user } });
-    } catch (error: any) {
-      setErrors(error.formErrors.fieldErrors);
+    } catch (error: ZodError | unknown | object) {
+      if (error instanceof ZodError) {
+        setErrors(error.formErrors.fieldErrors);
+        console.log(error.message);
+      }
     }
   };
 
