@@ -1,4 +1,5 @@
 import axios from "axios";
+import { backUrl } from "../constants/constants";
 
 export const useCanceledTicket = (
   token: string,
@@ -9,7 +10,7 @@ export const useCanceledTicket = (
     | undefined = async () => {
     const options = {
       method: "PUT",
-      url: "https://shift-backend.onrender.com/cinema/orders/cancel",
+      url: `${backUrl}/cinema/orders/cancel`,
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`,

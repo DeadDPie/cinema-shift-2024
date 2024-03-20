@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { User } from "src/types/types";
+import { backUrl } from "../constants/constants";
 
 export const useUserSession = (
   token: string,
@@ -12,7 +13,7 @@ export const useUserSession = (
     const func = async () => {
       const options = {
         method: "GET",
-        url: "https://shift-backend.onrender.com/users/session",
+        url: `${backUrl}/users/session`,
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,

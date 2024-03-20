@@ -15,3 +15,5 @@ export const validationSchema = z.object({
   lastname: nameSchema,
   phone: phoneSchema,
 });
+
+export const backUrl = "https://shift-backend.onrender.com";

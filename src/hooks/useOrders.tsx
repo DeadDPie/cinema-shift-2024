@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { backUrl } from "../constants/constants";
 
 import { Order, OrderResponse } from "../types/types";
 
@@ -10,7 +11,7 @@ export const useOrders = (token: string) => {
     const fetchOrders = async () => {
       const options = {
         method: "GET",
-        url: "https://shift-backend.onrender.com/cinema/orders",
+        url: `${backUrl}/cinema/orders`,
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,

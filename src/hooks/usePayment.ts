@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { backUrl } from "../constants/constants";
 
 import {
   setSuccessful,
@@ -27,7 +28,7 @@ export const usePayment = (
   const buyTicket = async () => {
     const options = {
       method: "POST",
-      url: "https://shift-backend.onrender.com/cinema/payment",
+      url: `${backUrl}/cinema/payment`,
       data: {
         filmId: `${movieId}`,
         person: {

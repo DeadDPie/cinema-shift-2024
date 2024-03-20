@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { backUrl } from "../constants/constants";
 
 import { Schedule } from "../types/types";
 
@@ -14,7 +15,7 @@ export const useSchedule = (filmId: string | undefined) => {
     const func = async () => {
       try {
         const response = await axios.get<APIResponse>(
-          `https://shift-backend.onrender.com/cinema/film/${filmId}/schedule`
+          `${backUrl}/cinema/film/${filmId}/schedule`
         );
         //console.log(response.data.schedules);
         setSchedules(response.data.schedules);

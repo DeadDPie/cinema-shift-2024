@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { backUrl } from "../../constants/constants";
 import { Film } from "../../types/types";
 
 import cl from "./Card.module.scss";
@@ -26,7 +27,7 @@ export const Card: FC<FilmCardProps> = ({ film }) => {
     <div className={cl.item}>
       <img
         className={cl.image}
-        src={`https://shift-backend.onrender.com${film.img}`}
+        src={`${backUrl}${film.img}`}
         alt="photo of movie"
       />
       <div className={cl.about}>

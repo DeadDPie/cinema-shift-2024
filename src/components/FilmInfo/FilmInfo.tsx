@@ -1,6 +1,6 @@
 import cl from "./FilmInfo.module.scss";
 import { Film } from "../../types/types";
-
+import { backUrl } from "../../constants/constants";
 interface FilmInfoProps {
   film: Film;
 }
@@ -11,7 +11,7 @@ export const FilmInfo: React.FC<FilmInfoProps> = ({ film }) => {
       <div className={cl.info}>
         <img
           className={cl.image}
-          src={`https://shift-backend.onrender.com${film.img}`}
+          src={`${backUrl}${film.img}`}
           alt="photo of movie"
         />
         <div className={cl.item}>

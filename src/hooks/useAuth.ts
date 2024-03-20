@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { backUrl } from "../constants/constants";
+
 import axios from "axios";
 
 export const useAuth = (phone: string, code: string) => {
@@ -7,7 +9,7 @@ export const useAuth = (phone: string, code: string) => {
   const handleButtonClick = async () => {
     const options = {
       method: "POST",
-      url: "https://shift-backend.onrender.com/users/signin",
+      url: `${backUrl}/users/signin`,
       data: { phone: `${phone}`, code: parseInt(code) },
     };
     try {
@@ -28,7 +30,7 @@ export const useRequestCode = (phone: string) => {
   const handleRequestCode = async () => {
     const options = {
       method: "POST",
-      url: "https://shift-backend.onrender.com/auth/otp",
+      url: `${backUrl}/auth/otp`,
       data: { phone: `${phone}` },
     };
     try {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import { backUrl } from "../constants/constants";
 import { FilmsResponse, Film } from "../types/types";
 
 export const useAllMovies = (): Film[] | undefined => {
@@ -10,7 +11,7 @@ export const useAllMovies = (): Film[] | undefined => {
     const fetchData = async () => {
       try {
         const response = await axios.get<FilmsResponse>(
-          "https://shift-backend.onrender.com/cinema/today"
+          `${backUrl}/cinema/today`
         );
         setMovies(response.data.films);
       } catch (error) {
