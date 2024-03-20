@@ -1,0 +1,63 @@
+.info {
+  display: flex;
+
+  width: 1032px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    margin: 50px 40px 20px 20px;
+    box-sizing: border-box;
+
+    button {
+      background-color: #9534d2;
+      width: 156px;
+      height: 40px;
+      border: 2px;
+      border-radius: 8px;
+      font-family: sans-serif;
+      font-weight: 300;
+      font-size: 24px;
+      box-align: Center;
+      margin: 5px;
+      color: white;
+    }
+    .rating {
+      color: #637083;
+      font-family: sans-serif;
+      size: 14px;
+      margin: 10px 0px;
+    }
+    .h2 {
+      font-family: sans-serif;
+
+      font-size: 20px;
+      color: #949494;
+      margin: 5px 0px;
+    }
+    i {
+      margin-right: 10px;
+      margin-top: 5px;
+      color: #6f6464;
+    }
+    .h1 {
+      font-family: sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      margin-bottom: 5px;
+      color: #252525;
+      font-size: 36px;
+    }
+    .about {
+      margin: 5px 0px;
+    }
+  }
+
+  .image {
+    width: 250px;
+    height: 340px;
+    border-radius: 8px;
+    margin: 50px 20px 20px 60px;
+  }
+}
